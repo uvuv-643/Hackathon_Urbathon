@@ -1,0 +1,61 @@
+version: '3'
+services:
+
+  nginx:
+    image: nginx:alpine
+    container_name: api_nginx
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./api:/var/www/api
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/certbot/conf:/etc/letsencrypt
+      - ./docker/certbot/www:/var/www/certbot
+    networks:
+      - api
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./docker/certbot/conf:/etc/letsencrypt/
+      - ./docker/certbot/www:/var/www/certbot/
+    command: certonly --webroot -w /var/www/certbot/ --email uvuv.space@gmail.com -d uvuv643.ru -d api.uvuv643.ru --agree-tos --cert-name urbaton
+    networks:
+      - api
+
+  pgsql:
+    container_name: api_postgres
+    restart: unless-stopped
+    image: postgres:14
+    ports:
+      - '127.0.0.1:5432:5432'
+    env_file:
+      - ./api/.env
+    volumes:
+      - 'urbaton-database-pgsql:/var/lib/postgresql/data'
+    networks:
+      - api
+
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - '127.0.0.1:56734:80'
+    volumes:
+      - './api:/app'
+    networks:
+      - api
+
+networks:
+  api:
+    driver: bridge
+
+volumes:
+  urbaton-database-pgsql:
+    driver: local

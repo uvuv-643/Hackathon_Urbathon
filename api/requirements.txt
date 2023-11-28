@@ -1,0 +1,6 @@
+flask==3.0.0
+SQLAlchemy==2.0.23
+attrs==23.1.0
+cattrs==23.2.2
+mimesis==11.1.0
+python-dotenv==1.0.0

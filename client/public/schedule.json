@@ -1,0 +1,166 @@
+{
+  "institutionId": 0,
+  "teachers": [
+    {
+      "teacherId": 1,
+      "teacher": "Иванов Дмитрий Сергеевич",
+      "schedule": [
+        {
+          "weekday": "string1",
+          "slots": [
+            {
+              "timestart": "2023-09-17 7:00:33",
+              "timeend": "2023-09-17 10:45:33",
+              "subject": "Живопись",
+              "room":"ауд. 513",
+              "isIndividual": true,
+              "group": 1,
+              "student": "Зинатулин Артём Витальевич"
+            }
+          ]
+        },
+        {
+          "weekday": "string2",
+          "slots": [
+            {
+              "timestart": "2023-09-17 11:15:33",
+              "timeend": "2023-09-17 16:15:33",
+              "subject": "Музыка",
+              "room":"ауд. 514",
+              "isIndividual": false,
+              "group": "гр. P551",
+              "studentId": 102
+            }
+          ]
+        }
+      ],
+      "id": 123
+    },
+    {
+      "teacherId": 1,
+      "teacher": "Иванов Дмитрий Сергеевич",
+      "schedule": [
+        {
+          "weekday": "string1",
+          "slots": [
+            {
+              "timestart": "2023-09-17 8:00:33",
+              "timeend": "2023-09-17 10:30:33",
+              "subject": "Живопись",
+              "room":"ауд. 515",
+              "isIndividual": true,
+              "group": 1,
+              "student": "Дмитриев Алексей Владимирович"
+            }
+          ]
+        }
+      ],
+      "id": 123
+    },
+    {
+      "teacherId": 2,
+      "teacher": "Соколов Дмитрий Васильевич",
+      "schedule": [
+        {
+          "weekday": "string2",
+          "slots": [
+            {
+              "timestart": "2023-09-17 7:15:33",
+              "timeend": "2023-09-17 16:15:33",
+              "subject": "Музыка",
+              "room":"ауд. 516",
+              "isIndividual": false,
+              "group": "гр. A25",
+              "studentId": 102
+            }
+          ]
+        }
+      ],
+      "id": 456
+    },
+    {
+      "teacherId": 1,
+      "teacher": "Иванов Дмитрий Сергеевич",
+      "schedule": [
+        {
+          "weekday": "string1",
+          "slots": [
+            {
+              "timestart": "2023-09-17 10:00:33",
+              "timeend": "2023-09-17 12:30:33",
+              "subject": "Живопись",
+              "room":"ауд. 517",
+              "isIndividual": true,
+              "group": 1,
+              "student": "Коржов Антон Валерьевич"
+            }
+          ]
+        }
+      ],
+      "id": 123
+    },
+    {
+      "teacherId": 2,
+      "teacher": "Соколов Дмитрий Васильевич",
+      "schedule": [
+        {
+          "weekday": "string2",
+          "slots": [
+            {
+              "timestart": "2023-09-17 11:15:33",
+              "timeend": "2023-09-17 16:15:33",
+              "subject": "Музыка",
+              "room":"ауд. 518",
+              "isIndividual": false,
+              "group": "гр. 71",
+              "studentId": 102
+            }
+          ]
+        }
+      ],
+      "id": 456
+    },
+    {
+      "teacherId": 1,
+      "teacher": "Иванов Дмитрий Сергеевич",
+      "schedule": [
+        {
+          "weekday": "string1",
+          "slots": [
+            {
+              "timestart": "2023-09-17 13:19:33",
+              "timeend": "2023-09-17 15:20:33",
+              "subject": "Живопись",
+              "room":"ауд. 519",
+              "isIndividual": true,
+              "group": 1,
+              "student": "Иванова Полина Алексеевна"
+            }
+          ]
+        }
+      ],
+      "id": 123
+    },
+    {
+      "teacherId": 2,
+      "teacher": "Соколов Дмитрий Васильевич",
+      "schedule": [
+        {
+          "weekday": "string2",
+          "slots": [
+            {
+              "timestart": "2023-09-17 11:15:33",
+              "timeend": "2023-09-17 16:15:33",
+              "subject": "Музыка",
+              "room":"ауд. 520",
+              "isIndividual": false,
+              "group": "гр. 611",
+              "studentId": 102
+            }
+          ]
+        }
+      ],
+      "id": 456
+    }
+  ]
+}

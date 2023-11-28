@@ -1,0 +1,302 @@
+.Schedule {
+  width: 100%;
+  padding: 30px;
+  background: $medium;
+  height: 100%;
+  min-height: 100vh;
+  &__Wrapper {
+    padding: 30px;
+    display: flex;
+    background: white;
+    border-radius: 30px;
+    height: 100%;
+  }
+  &__Table {
+    width: calc(100% - 300px);
+  }
+  &__Form {
+    width: 300px;
+    border-left: 1px solid $dark;
+    padding-left: 25px;
+    h3 {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  .ScheduleForm {
+    button {
+      @include button;
+      background: $medium;
+      color: white;
+      width: 100%;
+      margin-top: 15px;
+    }
+    &__Item {
+      margin-top: 15px;
+      width: 100%;
+      input, .react-datepicker-wrapper {
+        width: 100%;
+      }
+      p {
+        margin-bottom: 5px;
+      }
+      .react-datepicker-wrapper {
+        input {
+          border-color: hsl(0, 0%, 80%);
+          border-radius: 4px;
+          border-style: solid;
+          border-width: 1px;
+          height: 38px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .Timetable {
+    height: calc(100vh - 250px);
+    position: relative;
+    overflow: hidden;
+    &__Wrapper {
+      height: 100%;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #f4f4f4;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #9697E7;
+        border: 1px solid #9697E7;
+      }
+    }
+    &__Content {
+      position: relative;
+      height: 100%;
+      margin-top: calc(250px - 100vh);
+    }
+    &__Sidebar {
+      position: relative;
+      height: 100%;
+    }
+  }
+  .TimetableHeader {
+    height: 100%;
+    position: absolute;
+    z-index: 8;
+    div {
+      position: absolute;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid $medium;
+      font-weight: bold;
+      background: white;
+      &:not(:last-child) {
+        border-right: 0;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .TimetableTeachers {
+    height: 100%;
+    position: absolute;
+
+    z-index: 488;
+    div {
+      position: absolute;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid $medium;
+      background: white;
+      font-weight: bold;
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .TimetableContent {
+    height: 100%;
+    position: absolute;
+    width: 3600px;
+    div {
+      padding: 15px;
+      font-size: 12px;
+      position: absolute;
+      text-align: center;
+      vertical-align: middle;
+      height: 100%;
+      border: 3px dashed $medium;
+      background: $ldark;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background: $medium;
+      }
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+    ._time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+  &__Back {
+    display: flex;
+    align-items: center;
+    img {
+      width: 16px;
+      margin-right: 7px;
+    }
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+  }
+}
+
+.SmallCalendar {
+  color: white;
+  font-weight: bold;
+  padding: 15px 0;
+  &__Days {
+    display: flex;
+  }
+  &__Month {
+    font-size: 20px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+  }
+  &__Item {
+    width: 50px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    border: 1px solid $medium;
+    &._active {
+      border: 1px solid white;
+    }
+  }
+  &__DayWeek {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .Schedule {
+    padding: 0;
+    &__Wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    &__Table {
+      width: 100%;
+    }
+
+    &__Form {
+      width: 100%;
+      border: none;
+    }
+    .Timetable {
+      margin: 0;
+      padding: 0;
+      font-size: 10px;
+    }
+    .TimetableTeachers {
+      div {
+        width: 100px !important;
+      }
+    }
+    &__Form {
+      padding: 30px 0 0;
+    }
+  }
+}
+
+.Table {
+  padding: 30px;
+}
+.Table__Wrapper {
+  margin-top: 30px;
+  overflow-x: auto;  // Enable horizontal scrolling for smaller screens
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9697E7;
+    border: 1px solid #9697E7;
+  }
+
+  table {
+    min-width: 1200px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    th, td {
+      padding: 12px;
+      border: 1px solid white;
+      text-align: left;
+    }
+
+    th {
+      background-color: $medium;
+      color: white;
+    }
+
+    tr {
+      &:hover {
+        background-color: $ldark;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+
+// Media query for mobile responsiveness
+@media (max-width: 600px) {
+  table {
+    th, td {
+      font-size: 14px;
+    }
+
+    th {
+      padding: 8px;
+    }
+
+    td {
+      padding: 8px;
+    }
+  }
+}
